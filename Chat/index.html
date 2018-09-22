@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="chatApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAaceWdKcZjfm5_kn7tsRr5t9BtLY1NZ44",
+    authDomain: "teambuilder-68ab4.firebaseapp.com",
+    databaseURL: "https://teambuilder-68ab4.firebaseio.com",
+    projectId: "teambuilder-68ab4",
+    storageBucket: "teambuilder-68ab4.appspot.com",
+    messagingSenderId: "943024127765"
+  };
+  firebase.initializeApp(config);
+</script>
+    
+    <script src="app.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/2.2.0/angularfire.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body ng-controller="ChatController">
+    <br>
+    <div class="container">
+        <div class="panel panel-primary">
+            <div class="panel-heading">Web Based Firebase Chat Application</div>
+            <div class="panel-body">
+                <p ng-repeat="p in messages"> {{p.name1}} |  {{p.message}} - {{p.date | date:'medium'}}</p>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Message here..." ng-model="messageText">
+                </div>
+                
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Name..." ng-model="Username">
+                </div>
+                
+                <button type="submit" class="btn btn-default" ng-click="send()">Send</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+<!--Hello-->
